@@ -1,14 +1,19 @@
 const http = require('http')
+const articlesController = require('./articlesController')
+const logger = require('./logger')
 
 const hostname = '127.0.0.1'
 const port = 3000
 
 const handlers = {
-	'/sum': sum,
+	'/api/articles/readall': (req, res, payload, cb) =>
+		articlesController.readAll(cb),
 }
 
 const server = http.createServer((req, res) => {
 	parseBodyJson(req, (err, payload) => {
+		logger(req, payload)
+
 		const handler = getHandler(req.url)
 
 		handler(req, res, payload, (err, result) => {
@@ -35,12 +40,6 @@ function getHandler(url) {
 	return handlers[url] || notFound
 }
 
-function sum(req, res, payload, cb) {
-	const result = { c: payload.a + payload.b }
-
-	cb(null, result)
-}
-
 function notFound(req, res, payload, cb) {
 	cb({ code: 404, message: 'Not found' })
 }
@@ -55,8 +54,11 @@ function parseBodyJson(req, cb) {
 		.on('end', function () {
 			body = Buffer.concat(body).toString()
 
-			let params = JSON.parse(body)
-
-			cb(null, params)
+			if (body) {
+				let params = JSON.parse(body)
+				cb(null, params)
+			} else {
+				cb(null, {})
+			}
 		})
 }

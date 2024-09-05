@@ -1,0 +1,18 @@
+[
+	{
+		"id": "test1art",
+		"title": "Test Title",
+		"text": "Test Text",
+		"date": "10-10-2014",
+		"author": "testAuthor",
+		"comments": [
+			{
+				"id": "test1com",
+				"articleId": "test1art",
+				"text": "text of comment",
+				"date": "11-12-2014",
+				"author": "guest User"
+			}
+		]
+	}
+]

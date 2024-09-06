@@ -1,18 +1,1 @@
-[
-	{
-		"id": "test1art",
-		"title": "Test Title",
-		"text": "Test Text",
-		"date": "10-10-2014",
-		"author": "testAuthor",
-		"comments": [
-			{
-				"id": "test1com",
-				"articleId": "test1art",
-				"text": "text of comment",
-				"date": "11-12-2014",
-				"author": "guest User"
-			}
-		]
-	}
-]
+[{"id":1725608394998,"title":"te12","text":"UPDATED","date":"06.09.2024","author":"TEST2","comments":[{"id":1725608481606,"articleId":1725608394998,"text":"New Comment3","date":"06.09.2024","author":"test user"}]},{"id":1725609038429,"title":"UPDATED","text":"1","date":"06.09.2024","author":"TEST2","comments":[]}]

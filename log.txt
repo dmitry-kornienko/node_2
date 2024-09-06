@@ -1,0 +1,67 @@
+-------------------------------------
+	Date: 06.09.2024, 11:50:32
+  URL: /api/articles/readall
+  Method: GET
+  Body: {
+  "id": "test1art"
+}
+-------------------------------------
+	Date: 06.09.2024, 11:50:38
+  URL: /api/articles/create
+  Method: GET
+  Body: {
+  "title": "te1211111",
+  "text": "1",
+  "author": "TEST2"
+}
+-------------------------------------
+	Date: 06.09.2024, 11:50:52
+  URL: /api/articles/readall
+  Method: GET
+  Body: {}
+-------------------------------------
+	Date: 06.09.2024, 11:51:44
+  URL: /api/articles/update
+  Method: GET
+  Body: {
+  "id": 1725609038429,
+  "title": "UPDATED"
+}
+-------------------------------------
+	Date: 06.09.2024, 11:51:47
+  URL: /api/articles/readall
+  Method: GET
+  Body: {}
+-------------------------------------
+	Date: 06.09.2024, 11:51:58
+  URL: /api/comments/create
+  Method: GET
+  Body: {
+  "articleId": 1725609038429,
+  "text": "New Comment3",
+  "author": "test user"
+}
+-------------------------------------
+	Date: 06.09.2024, 11:52:00
+  URL: /api/articles/readall
+  Method: GET
+  Body: {}
+-------------------------------------
+	Date: 06.09.2024, 11:52:07
+  URL: /api/comments/delete
+  Method: GET
+  Body: {
+  "id": 1725609118208
+}
+-------------------------------------
+	Date: 06.09.2024, 11:52:08
+  URL: /api/comments/delete
+  Method: GET
+  Body: {
+  "id": 1725609118208
+}
+-------------------------------------
+	Date: 06.09.2024, 11:52:11
+  URL: /api/articles/readall
+  Method: GET
+  Body: {}

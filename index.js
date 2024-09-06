@@ -1,5 +1,6 @@
 const http = require('http')
 const articlesController = require('./articlesController')
+const commentsController = require('./commentsController')
 const logger = require('./logger')
 
 const hostname = '127.0.0.1'
@@ -8,12 +9,22 @@ const port = 3000
 const handlers = {
 	'/api/articles/readall': (req, res, payload, cb) =>
 		articlesController.readAll(cb),
+	'/api/articles/read': (req, res, payload, cb) =>
+		articlesController.read(payload, cb),
+	'/api/articles/create': (req, res, payload, cb) =>
+		articlesController.create(payload, cb),
+	'/api/articles/update': (req, res, payload, cb) =>
+		articlesController.update(payload, cb),
+	'/api/articles/delete': (req, res, payload, cb) =>
+		articlesController.deleteOne(payload, cb),
+	'/api/comments/create': (req, res, payload, cb) =>
+		commentsController.create(payload, cb),
+	'/api/comments/delete': (req, res, payload, cb) =>
+		commentsController.deleteOne(payload, cb),
 }
 
 const server = http.createServer((req, res) => {
 	parseBodyJson(req, (err, payload) => {
-		logger(req, payload)
-
 		const handler = getHandler(req.url)
 
 		handler(req, res, payload, (err, result) => {
@@ -22,12 +33,15 @@ const server = http.createServer((req, res) => {
 				res.setHeader('Content-Type', 'application/json')
 				res.end(JSON.stringify(err))
 
+				logger(req, payload)
 				return
 			}
 
 			res.statusCode = 200
 			res.setHeader('Content-Type', 'application/json')
 			res.end(JSON.stringify(result))
+
+			logger(req, payload)
 		})
 	})
 })

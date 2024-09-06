@@ -1,67 +1,201 @@
 -------------------------------------
-	Date: 06.09.2024, 11:50:32
+	Date: 06.09.2024, 12:47:24
   URL: /api/articles/readall
   Method: GET
-  Body: {
-  "id": "test1art"
-}
+  Body: {}
 -------------------------------------
-	Date: 06.09.2024, 11:50:38
+	Date: 06.09.2024, 12:47:25
+  URL: /api/articles/readall
+  Method: GET
+  Body: {}
+-------------------------------------
+	Date: 06.09.2024, 12:47:29
   URL: /api/articles/create
   Method: GET
   Body: {
-  "title": "te1211111",
-  "text": "1",
+  "title": "te1211121212121212111",
+  "text": "dsfsdf",
   "author": "TEST2"
 }
 -------------------------------------
-	Date: 06.09.2024, 11:50:52
+	Date: 06.09.2024, 12:47:30
+  URL: /api/articles/create
+  Method: GET
+  Body: {
+  "title": "te1211121212121212111",
+  "text": "dsfsdf",
+  "author": "TEST2"
+}
+-------------------------------------
+	Date: 06.09.2024, 12:47:35
+  URL: /api/articles/create
+  Method: GET
+  Body: {
+  "title": "te1211121212121212111",
+  "author": "TEST2"
+}
+-------------------------------------
+	Date: 06.09.2024, 12:47:37
+  URL: /api/articles/create
+  Method: GET
+  Body: {
+  "title": "te1211121212121212111",
+  "author": "TEST2"
+}
+-------------------------------------
+	Date: 06.09.2024, 12:47:40
+  URL: /api/articles/create
+  Method: GET
+  Body: {
+  "title": "te1211121212121212111",
+  "text": "dsfsdf",
+  "author": "TEST2"
+}
+-------------------------------------
+	Date: 06.09.2024, 12:47:43
   URL: /api/articles/readall
   Method: GET
   Body: {}
 -------------------------------------
-	Date: 06.09.2024, 11:51:44
+	Date: 06.09.2024, 12:47:54
   URL: /api/articles/update
   Method: GET
   Body: {
-  "id": 1725609038429,
-  "title": "UPDATED"
+  "id": 17256124494131,
+  "title": "UPDATED",
+  "text": "UPDATED"
 }
 -------------------------------------
-	Date: 06.09.2024, 11:51:47
+	Date: 06.09.2024, 12:48:10
+  URL: /api/articles/update
+  Method: GET
+  Body: {
+  "id": 1725612449413,
+  "title": "UPDATED",
+  "text": 12
+}
+-------------------------------------
+	Date: 06.09.2024, 12:48:11
+  URL: /api/articles/update
+  Method: GET
+  Body: {
+  "id": 1725612449413,
+  "title": "UPDATED",
+  "text": 12
+}
+-------------------------------------
+	Date: 06.09.2024, 12:48:21
+  URL: /api/articles/update
+  Method: GET
+  Body: {
+  "id": 1725612449413,
+  "title": "UPDATED",
+  "text": "UPDATED"
+}
+-------------------------------------
+	Date: 06.09.2024, 12:48:24
   URL: /api/articles/readall
   Method: GET
   Body: {}
 -------------------------------------
-	Date: 06.09.2024, 11:51:58
+	Date: 06.09.2024, 12:48:37
+  URL: /api/articles/delete
+  Method: GET
+  Body: {
+  "id": 17256124505942
+}
+-------------------------------------
+	Date: 06.09.2024, 12:48:42
+  URL: /api/articles/delete
+  Method: GET
+  Body: {
+  "id": 1725612450594
+}
+-------------------------------------
+	Date: 06.09.2024, 12:48:46
+  URL: /api/articles/readall
+  Method: GET
+  Body: {}
+-------------------------------------
+	Date: 06.09.2024, 12:48:57
   URL: /api/comments/create
   Method: GET
   Body: {
-  "articleId": 1725609038429,
+  "articleId": 17256124605571,
   "text": "New Comment3",
   "author": "test user"
 }
 -------------------------------------
-	Date: 06.09.2024, 11:52:00
+	Date: 06.09.2024, 12:49:05
+  URL: /api/comments/create
+  Method: GET
+  Body: {
+  "articleId": 1725612460557,
+  "author": "test user"
+}
+-------------------------------------
+	Date: 06.09.2024, 12:49:10
+  URL: /api/comments/create
+  Method: GET
+  Body: {
+  "articleId": 1725612460557,
+  "text": 2323,
+  "author": "test user"
+}
+-------------------------------------
+	Date: 06.09.2024, 12:49:14
+  URL: /api/comments/create
+  Method: GET
+  Body: {
+  "articleId": 1725612460557,
+  "text": "New Comment3",
+  "author": "test user"
+}
+-------------------------------------
+	Date: 06.09.2024, 12:49:18
   URL: /api/articles/readall
   Method: GET
   Body: {}
 -------------------------------------
-	Date: 06.09.2024, 11:52:07
+	Date: 06.09.2024, 12:49:28
   URL: /api/comments/delete
   Method: GET
   Body: {
-  "id": 1725609118208
+  "id": 17256125542201
 }
 -------------------------------------
-	Date: 06.09.2024, 11:52:08
+	Date: 06.09.2024, 12:49:31
   URL: /api/comments/delete
   Method: GET
   Body: {
-  "id": 1725609118208
+  "id": 1725612554220
 }
 -------------------------------------
-	Date: 06.09.2024, 11:52:11
+	Date: 06.09.2024, 12:49:35
+  URL: /api/articles/readall
+  Method: GET
+  Body: {}
+-------------------------------------
+	Date: 06.09.2024, 12:49:47
+  URL: /api/articles/delete
+  Method: GET
+  Body: {
+  "id": 1725612449413
+}
+-------------------------------------
+	Date: 06.09.2024, 12:49:50
+  URL: /api/articles/readall
+  Method: GET
+  Body: {}
+-------------------------------------
+	Date: 06.09.2024, 12:49:58
+  URL: /api/articles/delete
+  Method: GET
+  Body: {
+  "id": 1725612460557
+}
+-------------------------------------
+	Date: 06.09.2024, 12:50:00
   URL: /api/articles/readall
   Method: GET
   Body: {}

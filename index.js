@@ -2,6 +2,7 @@ const http = require('http')
 const articlesController = require('./articlesController')
 const commentsController = require('./commentsController')
 const logger = require('./logger')
+const validator = require('./validator')
 
 const hostname = '127.0.0.1'
 const port = 3000
@@ -11,14 +12,35 @@ const handlers = {
 		articlesController.readAll(cb),
 	'/api/articles/read': (req, res, payload, cb) =>
 		articlesController.read(payload, cb),
-	'/api/articles/create': (req, res, payload, cb) =>
-		articlesController.create(payload, cb),
-	'/api/articles/update': (req, res, payload, cb) =>
-		articlesController.update(payload, cb),
+	'/api/articles/create': (req, res, payload, cb) => {
+		validator.createArticle(req, res, payload, err => {
+			if (err) {
+				handleError(req, res, err, payload)
+				return
+			}
+			articlesController.create(payload, cb)
+		})
+	},
+	'/api/articles/update': (req, res, payload, cb) => {
+		validator.updateArticle(req, res, payload, err => {
+			if (err) {
+				handleError(req, res, err, payload)
+				return
+			}
+			articlesController.update(payload, cb)
+		})
+	},
 	'/api/articles/delete': (req, res, payload, cb) =>
 		articlesController.deleteOne(payload, cb),
-	'/api/comments/create': (req, res, payload, cb) =>
-		commentsController.create(payload, cb),
+	'/api/comments/create': (req, res, payload, cb) => {
+		validator.createComment(req, res, payload, err => {
+			if (err) {
+				handleError(req, res, err, payload)
+				return
+			}
+			commentsController.create(payload, cb)
+		})
+	},
 	'/api/comments/delete': (req, res, payload, cb) =>
 		commentsController.deleteOne(payload, cb),
 }
@@ -29,11 +51,7 @@ const server = http.createServer((req, res) => {
 
 		handler(req, res, payload, (err, result) => {
 			if (err) {
-				res.statusCode = err.code
-				res.setHeader('Content-Type', 'application/json')
-				res.end(JSON.stringify(err))
-
-				logger(req, payload)
+				handleError(req, res, err, payload)
 				return
 			}
 
@@ -56,6 +74,13 @@ function getHandler(url) {
 
 function notFound(req, res, payload, cb) {
 	cb({ code: 404, message: 'Not found' })
+}
+
+function handleError(req, res, err, payload) {
+	res.statusCode = err.code
+	res.setHeader('Content-Type', 'application/json')
+	res.end(JSON.stringify(err))
+	logger(req, payload)
 }
 
 function parseBodyJson(req, cb) {
